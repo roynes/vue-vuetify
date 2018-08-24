@@ -1,11 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer 
-      app
-      clipped
-      fixed
-      :value=drawer
-    >
+    <v-navigation-drawer app clipped fixed :value=drawer>
       <v-list>
         <v-list-tile 
           v-for="data in drawerData"
@@ -22,18 +17,10 @@
       </v-list>
     </v-navigation-drawer>
     
-    <v-toolbar 
-      app
-      clipped-left
-      fixed
-    >
+    <v-toolbar app clipped-left fixed>
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-spacer></v-spacer>
-      <v-menu 
-        offset-y 
-        left
-        :nudge-bottom=10
-      >
+      <v-menu offset-y left :nudge-bottom=10>
         <v-btn 
           icon 
           slot="activator"
@@ -99,7 +86,8 @@ export default {
       drawer: false,
       drawerData: [
         { icon: 'dashboard', title: 'Dashboard' },
-        { icon: 'supervisor_account', title: 'Users' }
+        { icon: 'supervisor_account', title: 'Users' },
+        { icon: 'settings', title: 'Settings' }
       ],
       users: {
         admins: {
